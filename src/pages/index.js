@@ -8,18 +8,19 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   console.log(data)
-  const [count, setCount] = useState(0)
+
   return (
     <Layout>
       <SEO title="Home" />
       <h1>Hello world</h1>
-      <ul>
-        {data.allWordpressWpProduct.edges.map(({ node }, index) => (
-          <li key={index}>
-            <p>{node.title}</p>
-          </li>
-        ))}
-      </ul>
+      {data.allWcProducts.edges.map(({ node }, index) => (
+        <div key={index}>
+          <img src={node.images[0].src} width="300px" height="300px" />
+          <p>{node.name}</p>
+          <p>{node.sku}</p>
+          <p>{node.weight}</p>
+        </div>
+      ))}
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -32,12 +33,16 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query MyQuery {
-    allWordpressWpProduct {
+    allWcProducts(limit: 5) {
       edges {
         node {
-          id
-          title
-          type
+          name
+          on_sale
+          sku
+          weight
+          images {
+            src
+          }
         }
       }
     }
