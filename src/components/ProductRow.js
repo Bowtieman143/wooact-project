@@ -11,7 +11,12 @@ const ProductRow = props => {
       <Row>
         <Col className="d-flex flex-wrap justify-content-between">
           {productArray.edges.map(({ node }, index) => (
-            <Product name={node.name} image={node.images[0].src} />
+            <Product
+              name={node.name}
+              image={node.images[0].src}
+              description={node.description}
+              price={node.price_html}
+            />
           ))}
         </Col>
       </Row>
