@@ -28,6 +28,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`],
+      },
+    },
+    {
       resolve: "@pasdo501/gatsby-source-woocommerce",
       options: {
         // Base URL of WordPress site
