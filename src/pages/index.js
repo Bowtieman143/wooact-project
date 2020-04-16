@@ -17,7 +17,10 @@ const IndexPage = ({ data }) => {
       >
         <Row className="py-5">
           <Col>
-            <img src={data.mainLogo.childImageSharp.fluid.src} />
+            <img
+              src={data.mainLogo.childImageSharp.fluid.src}
+              alt="This is state fourty eight gear"
+            />
           </Col>
         </Row>
       </Container>
@@ -30,8 +33,11 @@ const IndexPage = ({ data }) => {
           label="Accessorie Products"
           productArray={data.accesoryProducts}
         />
-        <ProductRow label="Men Products" productArray={data.menProducts} />
-        <ProductRow label="Women Products" productArray={data.womenProducts} />
+        <ProductRow label="Men's Products" productArray={data.menProducts} />
+        <ProductRow
+          label="Women's Products"
+          productArray={data.womenProducts}
+        />
       </Container>
     </Layout>
   )
@@ -40,7 +46,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query MyQuery {
     collabProducts: allWcProducts(
-      limit: 4
+      limit: 8
       filter: { categories: { elemMatch: { name: { eq: "Collaboration" } } } }
     ) {
       edges {
@@ -48,6 +54,8 @@ export const query = graphql`
           id
           wordpress_id
           name
+          description
+          price_html
           images {
             src
           }
@@ -66,6 +74,8 @@ export const query = graphql`
           id
           wordpress_id
           name
+          description
+          price_html
           images {
             src
           }
@@ -84,6 +94,8 @@ export const query = graphql`
           id
           wordpress_id
           name
+          description
+          price_html
           images {
             src
           }
@@ -102,6 +114,8 @@ export const query = graphql`
           id
           wordpress_id
           name
+          description
+          price_html
           images {
             src
           }
@@ -113,7 +127,7 @@ export const query = graphql`
     }
     mainLogo: file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
-        fluid(maxWidth: 900) {
+        fluid(maxWidth: 1000) {
           src
         }
       }
