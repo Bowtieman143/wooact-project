@@ -1,9 +1,8 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
-import Button from "react-bootstrap/Button"
 
 const Product = props => {
-  const { name, image, description, price } = props
+  const { name, image, price } = props
   return (
     <Card className="product-card my-2">
       <Card.Img variant="top" src={image} className="mb-0 product-card-image" />

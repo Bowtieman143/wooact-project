@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Product from "./Product"
@@ -12,6 +12,7 @@ const ProductRow = props => {
         <Col className="d-flex flex-wrap justify-content-between">
           {productArray.edges.map(({ node }, index) => (
             <Product
+              key={index}
               name={node.name}
               image={node.images[0].src}
               description={node.description}
