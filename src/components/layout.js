@@ -9,8 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "bootstrap/dist/css/bootstrap.min.css"
+
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
     </>
   )

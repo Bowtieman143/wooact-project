@@ -1,50 +1,37 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Product from "../components/Product"
+import ProductRow from "../components/ProductRow"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
-
   return (
     <Layout>
       <SEO title="Home" />
+      <Container
+        style={{ backgroundColor: "#111111" }}
+        fluid
+        className="justify-content-center text-center py-5"
+      >
+        <Row className="py-5">
+          <Col>
+            <img src={data.mainLogo.childImageSharp.fluid.src} />
+          </Col>
+        </Row>
+      </Container>
       <Container>
-        <h2>Collaboration Products</h2>
-        <Row>
-          <Col className="d-flex flex-wrap justify-content-between">
-            {data.collabProducts.edges.map(({ node }, index) => (
-              <Product name={node.name} image={node.images[0].src} />
-            ))}
-          </Col>
-        </Row>
-        <h2>Accessories</h2>
-        <Row>
-          <Col className="d-flex flex-wrap justify-content-between">
-            {data.accesoryProducts.edges.map(({ node }, index) => (
-              <Product name={node.name} image={node.images[0].src} />
-            ))}
-          </Col>
-        </Row>
-        <h2>Men Products</h2>
-        <Row>
-          <Col className="d-flex flex-wrap justify-content-between">
-            {data.menProducts.edges.map(({ node }, index) => (
-              <Product name={node.name} image={node.images[0].src} />
-            ))}
-          </Col>
-        </Row>
-        <h2>Women Products</h2>
-        <Row>
-          <Col className="d-flex flex-wrap justify-content-between">
-            {data.womenProducts.edges.map(({ node }, index) => (
-              <Product name={node.name} image={node.images[0].src} />
-            ))}
-          </Col>
-        </Row>
+        <ProductRow
+          label="Collaboration Products"
+          productArray={data.collabProducts}
+        />
+        <ProductRow
+          label="Accessorie Products"
+          productArray={data.accesoryProducts}
+        />
+        <ProductRow label="Men Products" productArray={data.menProducts} />
+        <ProductRow label="Women Products" productArray={data.womenProducts} />
       </Container>
     </Layout>
   )
@@ -64,6 +51,9 @@ export const query = graphql`
           images {
             src
           }
+          product_variations {
+            regular_price
+          }
         }
       }
     }
@@ -78,6 +68,9 @@ export const query = graphql`
           name
           images {
             src
+          }
+          product_variations {
+            regular_price
           }
         }
       }
@@ -94,6 +87,9 @@ export const query = graphql`
           images {
             src
           }
+          product_variations {
+            regular_price
+          }
         }
       }
     }
@@ -109,6 +105,16 @@ export const query = graphql`
           images {
             src
           }
+          product_variations {
+            regular_price
+          }
+        }
+      }
+    }
+    mainLogo: file(relativePath: { eq: "logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 900) {
+          src
         }
       }
     }
