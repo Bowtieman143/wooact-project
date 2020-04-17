@@ -13,6 +13,17 @@ h3 {
 .product-card {
   width: 48%;
 }
+
+.product-card:hover {
+  /* transition-delay: 0.1s; */
+  transition-duration: 0.5s;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray; /* IE 6-9 */
+}
+
 .product-card-image {
   object-fit: cover;
   width: 300px;

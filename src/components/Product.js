@@ -1,18 +1,23 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
+import SaleAlert from "./SaleAlert"
 
 const Product = props => {
-  const { name, image, price } = props
+  const { name, image, price, isOnSale } = props
   return (
     <Card className="product-card my-2">
-      <Card.Img variant="top" src={image} className="mb-0 product-card-image" />
+      {isOnSale && <SaleAlert />}
+      <Card.Img
+        variant="top"
+        src={image}
+        className="mb-0 product-card-image position-relative"
+      />
       <Card.Body className="p-2">
         <Card.Title
           className="mb-0"
           style={{ fontSize: 13, fontWeight: "400" }}
-        >
-          {name}
-        </Card.Title>
+          dangerouslySetInnerHTML={{ __html: name }}
+        ></Card.Title>
         <Card.Title
           className="mt-2 mb-0"
           style={{ fontSize: 14, fontWeight: "200" }}

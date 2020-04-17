@@ -54,13 +54,10 @@ export const query = graphql`
           id
           wordpress_id
           name
-          description
+          on_sale
           price_html
           images {
             src
-          }
-          product_variations {
-            regular_price
           }
         }
       }
@@ -74,13 +71,10 @@ export const query = graphql`
           id
           wordpress_id
           name
-          description
+          on_sale
           price_html
           images {
             src
-          }
-          product_variations {
-            regular_price
           }
         }
       }
@@ -94,13 +88,10 @@ export const query = graphql`
           id
           wordpress_id
           name
-          description
+          on_sale
           price_html
           images {
             src
-          }
-          product_variations {
-            regular_price
           }
         }
       }
@@ -114,13 +105,10 @@ export const query = graphql`
           id
           wordpress_id
           name
-          description
+          on_sale
           price_html
           images {
             src
-          }
-          product_variations {
-            regular_price
           }
         }
       }

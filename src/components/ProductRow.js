@@ -17,6 +17,7 @@ const ProductRow = props => {
               image={node.images[0].src}
               description={node.description}
               price={node.price_html}
+              isOnSale={node.on_sale}
             />
           ))}
         </Col>
