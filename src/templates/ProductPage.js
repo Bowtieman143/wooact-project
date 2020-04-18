@@ -8,22 +8,22 @@ import SaleAlert from "../components/SaleAlert"
 
 const ProductPage = props => {
   const { name, slug, description, images, price, onSale } = props.pageContext
-  const [viewedImage, setViewedImage] = useState(
-    images[0].src ||
-      "https://www.simrad-yachting.com/assets/img/default-product-img.png"
-  )
+  const [viewedImage, setViewedImage] = useState(images[0].src)
   return (
     <Layout>
-      <Container className="py-4">
+      <Container>
         <Row>
           <Col sm={12} md={6}>
             {images.length > 0 && (
               <>
                 {onSale && <SaleAlert />}
                 <img
-                  src={viewedImage}
+                  src={images[0].src}
                   className="position-relative product-page-image"
                   alt={slug}
+                  onClick={() => {
+                    setViewedImage(viewedImage)
+                  }}
                 />
               </>
             )}
@@ -34,7 +34,7 @@ const ProductPage = props => {
                   className="position-relative w-25 mx-1"
                   alt={slug}
                   onClick={() => {
-                    setViewedImage(image.src)
+                    setViewedImage(viewedImage)
                   }}
                 />
               ))}
