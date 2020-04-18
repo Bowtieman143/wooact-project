@@ -8,7 +8,7 @@ import SaleAlert from "../components/SaleAlert"
 
 const ProductPage = props => {
   const { name, slug, description, images, price, onSale } = props.pageContext
-  const [viewedImage, setViewedImage] = useState(images[0].src)
+  const [viewedImage, setViewedImage] = useState(null)
   return (
     <Layout>
       <Container>
