@@ -1,9 +1,10 @@
 import React from "react"
+import { Link } from "gatsby"
 import Card from "react-bootstrap/Card"
 import SaleAlert from "./SaleAlert"
 
 const Product = props => {
-  const { name, image, price, isOnSale } = props
+  const { name, image, price, isOnSale, id } = props
   return (
     <Card className="product-card my-2">
       {isOnSale && <SaleAlert />}
@@ -12,7 +13,7 @@ const Product = props => {
         src={image}
         className="mb-0 product-card-image position-relative"
       />
-      <Card.Body className="p-2">
+      <Card.Body>
         <Card.Title
           className="mb-0"
           style={{ fontSize: 13, fontWeight: "400" }}
@@ -23,8 +24,9 @@ const Product = props => {
           style={{ fontSize: 14, fontWeight: "200" }}
           dangerouslySetInnerHTML={{ __html: price }}
         ></Card.Title>
+        <Card.Text></Card.Text>
+        <Link to={`/product/${id}`}>View Product</Link>
       </Card.Body>
-      {/* <Card.Footer className="py-0 pl-4 text-muted">2 days ago</Card.Footer> */}
     </Card>
   )
 }

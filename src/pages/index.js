@@ -54,6 +54,7 @@ export const query = graphql`
           id
           wordpress_id
           name
+          slug
           on_sale
           price_html
           images {
@@ -71,6 +72,7 @@ export const query = graphql`
           id
           wordpress_id
           name
+          slug
           on_sale
           price_html
           images {
@@ -88,6 +90,7 @@ export const query = graphql`
           id
           wordpress_id
           name
+          slug
           on_sale
           price_html
           images {
@@ -105,6 +108,7 @@ export const query = graphql`
           id
           wordpress_id
           name
+          slug
           on_sale
           price_html
           images {
