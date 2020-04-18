@@ -2,6 +2,7 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
+import Button from "react-bootstrap/Button"
 import Layout from "../components/layout"
 
 const ProductPage = props => {
@@ -16,9 +17,9 @@ const ProductPage = props => {
             {images.length > 0 ? <img src={images[0].src} alt={slug} /> : null}
           </Col>
           <Col>
-            <h1>{name}</h1>
-            <h3>{slug}</h3>
-            <p>{description}</p>
+            <h1 dangerouslySetInnerHTML={{ __html: name }}></h1>
+            <p dangerouslySetInnerHTML={{ __html: description }}></p>
+            <Button variant="success">Buy Now!</Button>
           </Col>
         </Row>
       </Container>
