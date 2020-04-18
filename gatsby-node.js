@@ -55,6 +55,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         name: node.name,
         description: node.description,
         images: node.images,
+        price: node.price_html,
+        onSale: node.on_sale,
       },
     })
   })
