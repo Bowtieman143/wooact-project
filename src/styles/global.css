@@ -12,6 +12,9 @@ h3 {
 
 .product-card {
   width: 48%;
+  border: 2px solid #000;
+  border-radius: 2px;
+  box-shadow: 10px 10px 5px #000;
 }
 .product-card-image {
   object-fit: cover;
