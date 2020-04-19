@@ -17,7 +17,7 @@ const MainNavbar = () => {
       </Navbar>
       <Navbar className="sticky-top" bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">State Fourty Eight</Navbar.Brand>
+          <Navbar.Brand href="#home">State Forty Eight</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
