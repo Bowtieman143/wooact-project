@@ -18,6 +18,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             wordpress_id
             name
+            attributes {
+              options
+            }
             description
             price_html
             slug
@@ -57,6 +60,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         images: node.images,
         price: node.price_html,
         onSale: node.on_sale,
+        attributes: node.attributes,
       },
     })
   })

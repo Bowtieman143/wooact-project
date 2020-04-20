@@ -40,6 +40,10 @@ h3 {
   width: 18%;
 }
 
+.product-page-tabs-content {
+  padding: 30px;
+}
+
 @media (min-width: 576px) {
 }
 @media (min-width: 768px) {
