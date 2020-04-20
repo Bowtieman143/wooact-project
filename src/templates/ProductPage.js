@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, Fragment } from "react"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
@@ -17,31 +17,45 @@ const ProductPage = props => {
     id,
   } = props.pageContext
 
+  const { name, slug, description, images, price, onSale } = props.pageContext
+  const [viewedImage, setViewedImage] = useState(images[0].src || null)
+
   return (
     <Layout>
       <Container>
         <Row>
           <Col sm={12} md={6}>
-            {images.length > 0 && (
-              <>
+            {images.length > 0 ? (
+              <Fragment>
                 {onSale && <SaleAlert />}
                 <img
-                  src={images[0].src}
+                  src={viewedImage}
                   className="position-relative product-page-image"
                   alt={slug}
                 />
-              </>
-            )}
-            <div>
-              {images.map(image => (
-                <img
-                  key={images.src}
-                  src={image.src}
-                  className="position-relative product-page-image-display mx-1"
-                  alt={slug}
-                />
-              ))}
-            </div>
+
+                {images.map(image => (
+                  <img
+                    key={images.src}
+                    src={image.src}
+                    className="position-relative product-page-image-display mx-1"
+                    alt={slug}
+                  />
+                ))}
+                {images.map(image => (
+                  <img
+                    src={image.src}
+                    className="position-relative w-25 mx-1"
+                    alt={slug}
+                    onClick={() => {
+                      console.log("You have clicked me")
+
+                      setViewedImage(image.src)
+                    }}
+                  />
+                ))}
+              </Fragment>
+            ) : null}
           </Col>
           <Col className="py-4">
             <h2 dangerouslySetInnerHTML={{ __html: name }}></h2>
