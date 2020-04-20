@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
+import Button from "react-bootstrap/Button"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProductRow from "../components/ProductRow"
@@ -17,7 +18,7 @@ const IndexPage = ({ data }) => {
         className="justify-content-center text-center py-5"
       >
         <Row className="py-5">
-          <Col>
+          <Col className="py-5">
             <img
               src={data.mainLogo.childImageSharp.fluid.src}
               alt="This is state fourty eight gear"
@@ -25,7 +26,7 @@ const IndexPage = ({ data }) => {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="">
         <ProductRow
           label="Collaboration Products"
           productArray={data.collabProducts}
@@ -39,6 +40,11 @@ const IndexPage = ({ data }) => {
           label="Women's Products"
           productArray={data.womenProducts}
         />
+        <Row className="text-center">
+          <Col>
+            <Button variant="dark">Shop All Products</Button>
+          </Col>
+        </Row>
       </Container>
     </Layout>
   )
@@ -65,7 +71,7 @@ export const query = graphql`
       }
     }
     accesoryProducts: allWcProducts(
-      limit: 4
+      limit: 8
       filter: { categories: { elemMatch: { name: { eq: "Accessories" } } } }
     ) {
       edges {
@@ -83,7 +89,7 @@ export const query = graphql`
       }
     }
     menProducts: allWcProducts(
-      limit: 4
+      limit: 8
       filter: { categories: { elemMatch: { name: { eq: "Men" } } } }
     ) {
       edges {
@@ -101,7 +107,7 @@ export const query = graphql`
       }
     }
     womenProducts: allWcProducts(
-      limit: 4
+      limit: 8
       filter: { categories: { elemMatch: { name: { eq: "Women" } } } }
     ) {
       edges {

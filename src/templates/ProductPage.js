@@ -97,7 +97,7 @@ const ProductPage = props => {
               )}
               <Form.Group controlId="exampleForm.ControlSelect1">
                 <Form.Label>Ammount</Form.Label>
-                <Form.Control type="number" />
+                <Form.Control type="number" placeholder="1" />
               </Form.Group>
             </Form>
             <Button variant="success">Buy Now!</Button>
