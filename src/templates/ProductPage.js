@@ -83,8 +83,8 @@ const ProductPage = props => {
             <h2 dangerouslySetInnerHTML={{ __html: name }}></h2>
             <h3 dangerouslySetInnerHTML={{ __html: price }}></h3>
             <p dangerouslySetInnerHTML={{ __html: description }}></p>
-            {attributes.length > 0 && (
-              <Form>
+            <Form>
+              {attributes.length > 0 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>Sizes</Form.Label>
                   <Form.Control as="select">
@@ -94,8 +94,12 @@ const ProductPage = props => {
                     ))}
                   </Form.Control>
                 </Form.Group>
-              </Form>
-            )}
+              )}
+              <Form.Group controlId="exampleForm.ControlSelect1">
+                <Form.Label>Ammount</Form.Label>
+                <Form.Control type="number" />
+              </Form.Group>
+            </Form>
             <Button variant="success">Buy Now!</Button>
           </Col>
         </Row>
