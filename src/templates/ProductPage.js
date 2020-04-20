@@ -18,7 +18,7 @@ const ProductPage = props => {
               <Fragment>
                 {onSale && <SaleAlert />}
                 <img
-                  src={viewedImage}
+                  src={images[0].src}
                   className="position-relative product-page-image"
                   alt={slug}
                 />
