@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
-import Form from "react-bootstrap/Form"
+// import Form from "react-bootstrap/Form"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import Button from "react-bootstrap/Button"
@@ -83,7 +83,7 @@ const ProductPage = props => {
             <h2 dangerouslySetInnerHTML={{ __html: name }}></h2>
             <h3 dangerouslySetInnerHTML={{ __html: price }}></h3>
             <p dangerouslySetInnerHTML={{ __html: description }}></p>
-            <Form>
+            {/* <Form>
               <Form.Group controlId="exampleForm.ControlSelect1">
                 <Form.Label>Sizes</Form.Label>
                 <Form.Control as="select">
@@ -93,7 +93,7 @@ const ProductPage = props => {
                   ))}
                 </Form.Control>
               </Form.Group>
-            </Form>
+            </Form> */}
             <Button variant="success">Buy Now!</Button>
           </Col>
         </Row>
