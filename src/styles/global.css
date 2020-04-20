@@ -36,6 +36,10 @@ h3 {
   height: 275px;
 }
 
+.product-page-image-display {
+  width: 18%;
+}
+
 @media (min-width: 576px) {
 }
 @media (min-width: 768px) {

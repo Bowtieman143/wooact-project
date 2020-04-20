@@ -7,8 +7,16 @@ import Layout from "../components/layout"
 import SaleAlert from "../components/SaleAlert"
 
 const ProductPage = props => {
-  const { name, slug, description, images, price, onSale } = props.pageContext
-  const [viewedImage, setViewedImage] = useState(null)
+  const {
+    name,
+    slug,
+    description,
+    images,
+    price,
+    onSale,
+    id,
+  } = props.pageContext
+
   return (
     <Layout>
       <Container>
@@ -21,21 +29,16 @@ const ProductPage = props => {
                   src={images[0].src}
                   className="position-relative product-page-image"
                   alt={slug}
-                  onClick={() => {
-                    setViewedImage(viewedImage)
-                  }}
                 />
               </>
             )}
             <div>
               {images.map(image => (
                 <img
+                  key={images.src}
                   src={image.src}
-                  className="position-relative w-25 mx-1"
+                  className="position-relative product-page-image-display mx-1"
                   alt={slug}
-                  onClick={() => {
-                    setViewedImage(viewedImage)
-                  }}
                 />
               ))}
             </div>
@@ -51,16 +54,5 @@ const ProductPage = props => {
     </Layout>
   )
 }
-export const query = graphql`
-  query defaultImage {
-    file(relativePath: { eq: "default-product-image.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          src
-        }
-      }
-    }
-  }
-`
 
 export default ProductPage
