@@ -25,12 +25,16 @@ module.exports = {
         theme_color: `#111111`,
         display: `minimal-ui`,
         icon: `src/images/logo-sm.png`, // This path is relative to the root of the site.
+      	cache_busting_mode: 'none',
       },
     },
     {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/index`],
+		workboxConfig: {
+         	globPatterns: ['**/*'],
+		  }
       },
     },
     {
