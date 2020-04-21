@@ -13,10 +13,12 @@ const ProductRow = props => {
           {productArray.edges.map(({ node }, index) => (
             <Product
               key={index}
+              id={node.id}
               name={node.name}
               image={node.images[0].src}
               description={node.description}
               price={node.price_html}
+              isOnSale={node.on_sale}
             />
           ))}
         </Col>
