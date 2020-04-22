@@ -10,7 +10,7 @@ const ProductRow = props => {
       <h2>{label}</h2>
       <Row>
         <Col className="d-flex flex-wrap justify-content-between">
-          {productArray.edges.map(({ node }, index) => (
+          {productArray.map(({ node }, index) => (
             <Product
               key={index}
               id={node.id}

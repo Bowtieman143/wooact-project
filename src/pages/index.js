@@ -29,16 +29,19 @@ const IndexPage = ({ data }) => {
       <Container className="">
         <ProductRow
           label="Collaboration Products"
-          productArray={data.collabProducts}
+          productArray={data.collabProducts.edges}
         />
         <ProductRow
           label="Accessorie Products"
-          productArray={data.accesoryProducts}
+          productArray={data.accesoryProducts.edges}
         />
-        <ProductRow label="Men's Products" productArray={data.menProducts} />
+        <ProductRow
+          label="Men's Products"
+          productArray={data.menProducts.edges}
+        />
         <ProductRow
           label="Women's Products"
-          productArray={data.womenProducts}
+          productArray={data.womenProducts.edges}
         />
         <Row className="text-center">
           <Col>

@@ -38,12 +38,16 @@ const MainNavbar = () => (
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto mr-auto">
+                <Nav.Link style={{ color: "#000000" }} href="/">
+                  Home
+                </Nav.Link>
                 <NavDropdown
                   style={{ color: "#000000" }}
                   title="Shop"
                   id="basic-nav-dropdown"
+                  href="/shop"
                 >
-                  <NavDropdown.Item href="#action/3.1">Shop</NavDropdown.Item>
+                  <NavDropdown.Item href="/shop">Shop</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
                   </NavDropdown.Item>
