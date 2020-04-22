@@ -21,7 +21,7 @@ const MainNavbar = () => (
       }
     `}
     render={data => (
-      <div className="bg-light">
+      <div className="bg-light sticky-top">
         <Container>
           <Row>
             <Col>
@@ -33,11 +33,7 @@ const MainNavbar = () => (
             </Col>
           </Row>
         </Container>
-        <Navbar
-          className="sticky-top p-0 pb-2 text-dark"
-          bg="light"
-          expand="lg"
-        >
+        <Navbar className="p-0 pb-2 text-dark" bg="light" expand="lg">
           <Container className="text-center justify-content-center">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
