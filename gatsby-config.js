@@ -23,7 +23,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#111111`,
         theme_color: `#111111`,
-        display: `fullscreen`,
+        display: `standalone`,
         icon: `src/images/logo-sm.png`, // This path is relative to the root of the site.
         cache_busting_mode: "none",
       },
