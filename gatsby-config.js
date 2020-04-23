@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `wooact-project`,
-        short_name: `starter`,
+        name: `SFE PWA`,
+        short_name: `SFE PWA`,
         start_url: `/`,
         background_color: `#111111`,
         theme_color: `#111111`,
