@@ -31,9 +31,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        appendScript: require.resolve(
-          `${__dirname}/src/scripts/installPromptSW.js`
-        ),
         precachePages: [`/index`],
         workboxConfig: {
           globPatterns: ["**/*"],
