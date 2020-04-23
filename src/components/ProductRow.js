@@ -9,7 +9,7 @@ const ProductRow = props => {
     <div className="my-5">
       <h2>{label}</h2>
       <Row>
-        <Col className="d-flex flex-wrap justify-content-between">
+        <Col className="d-flex flex-wrap justify-content-around">
           {productArray.map(({ node }, index) => (
             <Product
               key={index}

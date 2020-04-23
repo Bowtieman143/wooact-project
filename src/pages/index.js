@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
@@ -9,6 +9,29 @@ import SEO from "../components/seo"
 import ProductRow from "../components/ProductRow"
 
 const IndexPage = ({ data }) => {
+  // useEffect(() => {
+  //   console.log("this has been run")
+  //   let deferredPrompt
+
+  //   window.addEventListener("beforeinstallprompt", e => {
+  //     e.preventDefault()
+  //     deferredPrompt = e
+  //     const btnAdd = document.createElement("button")
+  //     btnAdd.innerHTML = "hello world"
+  //     btnAdd.style.display = "block"
+  //   })
+
+  //   btnAdd.addEventListener("click", e => {
+  //     deferredPrompt.prompt()
+  //     deferredPrompt.userChoice.then(choiceResult => {
+  //       if (choiceResult.outcome === "accepted") {
+  //         console.log("User accepted the A2HS prompt")
+  //       }
+  //       deferredPrompt = null
+  //     })
+  //   })
+  // }, [])
+
   return (
     <Layout>
       <SEO title="Home" />
