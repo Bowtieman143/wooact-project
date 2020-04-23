@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import Button from "react-bootstrap/Button"
+import Modal from "react-bootstrap/Modal"
 import Layout from "../components/layout"
 import SaleAlert from "../components/SaleAlert"
 
@@ -20,7 +21,11 @@ const ProductPage = props => {
     attributes,
   } = props.pageContext
   const [viewedImage, setViewedImage] = useState(images[0].src)
-  console.log(attributes)
+
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   return (
     <Layout>
@@ -29,11 +34,24 @@ const ProductPage = props => {
           <Col sm={12} md={6}>
             {images.length > 0 ? (
               <Fragment>
+                <Modal
+                  show={show}
+                  onHide={handleClose}
+                  animation={false}
+                  aria-labelledby="contained-modal-title-vcenter"
+                  centered
+                >
+                  <Modal.Body className="p-0 m-0">
+                    <img src={viewedImage} className="m-0" alt={slug} />
+                  </Modal.Body>
+                </Modal>
+
                 {onSale && <SaleAlert />}
                 <img
                   src={viewedImage}
                   className="position-relative product-page-image"
                   alt={slug}
+                  onClick={handleShow}
                 />
 
                 {images.map((image, idx) => (

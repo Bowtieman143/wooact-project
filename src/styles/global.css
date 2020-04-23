@@ -31,6 +31,10 @@ h3 {
   filter: gray; /* IE 6-9 */
 }
 
+.product-page-image-display {
+  width: 18%;
+}
+
 .product-card-image {
   object-fit: cover;
   width: 250px;
