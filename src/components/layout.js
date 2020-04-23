@@ -16,15 +16,17 @@ import "../styles/global-two.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+  useStaticQuery(
+    graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
         }
       }
-    }
-  `)
+    `
+  )
 
   return (
     <>
