@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => {
     //   window.addEventListener("appinstalled", evt => {
     //     console.log("a2hs installed")
     //   })
-  }, [])
+  })
   return (
     <Layout>
       <SEO title="Home" />
